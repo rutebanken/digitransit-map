@@ -21,17 +21,17 @@
 // LANDUSE & LANDCOVER COLORS
 // =====================================================================
 
-@land:              #E8E0D8;
-@water:             #BEE4F8;
+@land:              #EDF1F2;
+@water:             #BFE4F7;
 @snow:              #EDE5DD;
 @crop:              #E9E5C2;
 @building:          darken(@land, 8);
 
 // Landuse colors account for 25% opacity:
-@grass:             #E1EBB0;
+@grass:             #D0E3BF;
 @sand:              #F7ECD2;
 @rock:              #D8D7D5;
-@park:              #C1E5A1;
+@park:              #D0E3BF;
 @cemetery:          #D5DCC2;
 @wood:              #B0C89F;
 @industrial:        #DDDCDC;
@@ -101,28 +101,28 @@
 @country_text:      @land * 0.2;
 @country_halo:      @place_halo;
 
-@state_text:        #765;
+@state_text:        #5B747F;
 @state_halo:        @place_halo;
 
-@city_text:         #765;
+@city_text:         #5B747F;
 @city_halo:         @place_halo;
 
-@town_text:         #765;
+@town_text:         #5B747F;
 @town_halo:         @place_halo;
 
-@road_text:         #666;
+@road_text:         #888;
 @road_halo:         #fff;
 
-@other_text:        #765;
+@other_text:        #5B747F;
 @other_halo:        @place_halo;
 
-@locality_text:     #aaa;
+@locality_text:     #888;
 @locality_halo:     @land;
 
 // Also used for other small places: hamlets, suburbs, localities
-@village_text:      #888;
+@village_text:      #989EA6;
 @village_halo:      @place_halo;
 
-@transport_text:    #765;
+@transport_text:    #5B747F;
 
 /**/
