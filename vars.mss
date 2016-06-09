@@ -10,12 +10,12 @@
 @name: '[name]';
 
 // set up font sets for various weights and styles
-@sans_lt:           "Gotham Rounded Book";
-@sans_lt_italic:    "Gotham Rounded Book Italic";
-@sans:              "Gotham Rounded Medium";
-@sans_bold:         "Gotham Rounded Bold";
-@sans_italic:       "Gotham Rounded Medium Italic";
-@sans_bold_italic:  "Gotham Rounded Bold Italic";
+@sans_lt:           "Lato Regular";
+@sans_lt_italic:    "Lato Italic";
+@sans:              "Lato Medium";
+@sans_bold:         "Lato Bold";
+@sans_italic:       "Lato Medium Italic";
+@sans_bold_italic:  "Lato Bold Italic";
 
 // =====================================================================
 // LANDUSE & LANDCOVER COLORS
