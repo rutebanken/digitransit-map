@@ -24,7 +24,7 @@
 @land:              #EDF1F2;
 @water:             #BFE4F7;
 @snow:              #edf1f2;
-@crop:              #d3d2a9;
+@crop:              #d0e3b5;
 @building:          darken(@land, 8);
 
 // Landuse colors account for 25% opacity:
@@ -35,7 +35,7 @@
 @cemetery:          #d0e3bf;
 @wood:              #becfa7;
 @industrial:        #DDDCDC;
-@agriculture:       #cccbb8;
+@agriculture:       #d0e3b5;
 @hospital:          darken(@land, 8);
 @school:            darken(@land, 8);
 @pitch:             #d0e3bf;
