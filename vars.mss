@@ -23,22 +23,22 @@
 
 @land:              #EDF1F2;
 @water:             #BFE4F7;
-@snow:              #EDE5DD;
-@crop:              #E9E5C2;
+@snow:              #edf1f2;
+@crop:              #d3d2a9;
 @building:          darken(@land, 8);
 
 // Landuse colors account for 25% opacity:
 @grass:             #D0E3BF;
-@sand:              #F7ECD2;
+@sand:              #f4f3dc;
 @rock:              #D8D7D5;
 @park:              #D0E3BF;
-@cemetery:          #D5DCC2;
-@wood:              #B0C89F;
+@cemetery:          #d0e3bf;
+@wood:              #becfa7;
 @industrial:        #DDDCDC;
-@agriculture:       #EAE0D0;
-@hospital:          #F2E3E1;
-@school:            #F2EAB8;
-@pitch:             #CAE6A9;
+@agriculture:       #cccbb8;
+@hospital:          darken(@land, 8);
+@school:            darken(@land, 8);
+@pitch:             #d0e3bf;
 @parking:           fadeout(@road_fill, 75%);
 @sports:            @park;
 
