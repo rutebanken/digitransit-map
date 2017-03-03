@@ -349,7 +349,7 @@
 
 // 2_6__ Suburbs _______________________________________________________
 
-#place_label[type='suburb'][zoom>=11][zoom<=14][localrank<=1],
+#place_label[type='suburb'][zoom>=13][zoom<=14][localrank<=1],
 #place_label[type='suburb'][zoom>=15][zoom<=18] {
   text-name: @name;
   text-face-name: @sans_lt;
