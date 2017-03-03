@@ -653,12 +653,13 @@
 
 #road::fill[class='major_rail'][zoom>=10],
 #road::fill[class='minor_rail'][zoom>=15],
-#tunnel[class='major_rail'][zoom>=13],
+#tunnel[class='major_rail'][zoom>=10],
 #tunnel[class='minor_rail'][zoom>=15],
-#bridge::fill[class='major_rail'][zoom>=13],
+#bridge::fill[class='major_rail'][zoom>=10],
 #bridge::fill[class='minor_rail'][zoom>=15] {
   ['mapnik::geometry_type'=2] {
     f/line-color: @rail_line;
+    [zoom<=12] { f/line-width: 0.4; }
     [zoom=13] { f/line-width: 0.6; }
     [zoom=14] { f/line-width: 0.8; }
     [zoom=15] { f/line-width: 1; }
