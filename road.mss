@@ -651,7 +651,7 @@
   }
 }
 
-#road::fill[class='major_rail'][zoom>=13],
+#road::fill[class='major_rail'][zoom>=10],
 #road::fill[class='minor_rail'][zoom>=15],
 #tunnel[class='major_rail'][zoom>=13],
 #tunnel[class='minor_rail'][zoom>=15],

@@ -74,7 +74,7 @@
 @path_fill:     #fff;
 @path_case:     @land;
 
-@rail_line:     #bbb;
+@rail_line:     #88a;
 @rail_fill:     #fff;
 @rail_case:     @land;
 
