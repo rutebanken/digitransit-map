@@ -1,0 +1,52 @@
+FROM node:6.7.0
+MAINTAINER Rutebanken
+
+RUN wget --quiet https://github.com/Yelp/dumb-init/releases/download/v1.0.1/dumb-init_1.0.1_amd64.deb
+RUN dpkg -i dumb-init_*.deb
+RUN npm set progress=false
+
+RUN echo "deb http://ftp.us.debian.org/debian testing main contrib non-free" >  /etc/apt/sources.list.d/use_test_resource.list \
+  && apt-get update \
+  && apt-get install -y g++
+
+RUN mkdir -p {{map_server_root}}
+
+WORKDIR {{map_server_root}}
+
+RUN npm install -g node-gyp
+RUN   npm install mapnik@3.5.14 && \
+      npm install tessera@0.9.0 && \
+      npm install tilelive-tmsource@0.5.0 && \
+      npm install tilelive-vector@3.9.4 && \
+      npm install tilelive-xray@0.2.0 && \
+      npm install tilejson@1.0.1 && \
+      npm install tilelive-vector@3.9.3 && \
+      npm install tilelive-merge@1.0.3 && \
+      npm install tilelive-streaming@0.7.4 && \
+      npm install tilelive-modules@0.3.1 && \
+      npm install tilelive-http@0.10.0 && \
+      npm install tilelive-error@1.0.0 && \
+      npm install tilelive-mapnik@0.6.18 && \
+      npm install tilelive-solid@0.1.2 && \
+      npm install tilelive-mapbox@0.4.0 && \
+      npm install tilelive-utfgrid@0.2.0 && \
+      npm install tilelive-tmstyle@0.6.0
+
+# Trouble 04.10.2016
+# npm install tilelive-raster@0.3.0 && \
+
+RUN git clone {{map_server_style_git}} {{map_server_style}}
+
+RUN sed -i -e 's#source: "http://tiletest.kapsi.fi:8080/index.json"#source: "tilejson+http://vectormapserver:{{vector_map_server_exposed_port}}/hsl-vector-map/index.json"#' {{map_server_style}}/project.yml
+
+COPY config.json {{map_server_root}}/
+
+WORKDIR {{map_server_root}}/
+
+EXPOSE {{map_server_exposed_port}}
+
+COPY vector_host_chooser.sh /vector_host_chooser.sh
+RUN chmod a+x /vector_host_chooser.sh
+ENTRYPOINT ["/vector_host_chooser.sh"]
+
+CMD node --max-old-space-size={{mapserver_node_memory_limit}} node_modules/tessera/bin/tessera.js --port {{map_server_exposed_port}} --config config.json

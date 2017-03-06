@@ -1,0 +1,23 @@
+---
+- name: Make log directory structure
+  file: path={{build_log_directory}} state=directory mode=0755 group=users
+
+- name: Make mapserver target directory structure
+  file: path={{map_server_root}}/ state=directory mode=0755 group=users
+
+- name: Move Dockerfile
+  template: src=Dockerfile.j2 dest={{map_server_root}}/Dockerfile mode=0755
+
+- name: Move config file
+  template: src=config.json.j2 dest={{map_server_root}}/config.json
+
+- name: Move entry file
+  template: src=vector_host_chooser.sh.j2 dest={{map_server_root}}/vector_host_chooser.sh
+
+- name: Build the mapserver docker image
+  shell: docker build --tag={{ mapserver_docker_image|quote }} --force-rm=true {{map_server_root}} > {{logfile}} 2>&1
+  register: image
+
+- name: Push mapserver docker image if built
+  when: image.changed
+  shell: docker push {{ mapserver_docker_image|quote }}
