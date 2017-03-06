@@ -22,22 +22,22 @@
 // =====================================================================
 
 @land:              #EDF1F2;
-@water:             #BFE4F7;
+@water:             #BAE1FC;
 @snow:              #edf1f2;
 @crop:              #d0e3b5;
-@building:          darken(@land, 8);
+@building:          darken(@land, 9);
 
 // Landuse colors account for 25% opacity:
-@grass:             #D0E3BF;
+@grass:             #D0EFAF;
 @sand:              #f4f3dc;
 @rock:              #D8D7D5;
-@park:              #D0E3BF;
+@park:              #CEE8A7;
 @cemetery:          #d0e3bf;
-@wood:              #becfa7;
-@industrial:        #DDDCDC;
+@wood:              #bedfa7;
+@industrial:        darken(@land, 3);
 @agriculture:       #d0e3b5;
-@hospital:          darken(@land, 8);
-@school:            darken(@land, 8);
+@hospital:          darken(@land, 3);
+@school:            darken(@land, 3);
 @pitch:             #d0e3bf;
 @parking:           fadeout(@road_fill, 75%);
 @sports:            @park;
@@ -74,7 +74,7 @@
 @path_fill:     #fff;
 @path_case:     @land;
 
-@rail_line:     #88a;
+@rail_line:     #809BB9;
 @rail_fill:     #fff;
 @rail_case:     @land;
 
