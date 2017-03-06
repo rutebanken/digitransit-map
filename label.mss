@@ -352,10 +352,10 @@
 #place_label[type='suburb'][zoom>=13][zoom<=14][localrank<=1],
 #place_label[type='suburb'][zoom>=15][zoom<=18] {
   text-name: @name;
-  text-face-name: @sans_lt;
+  text-face-name: @sans_bold;
   text-placement: point;
   text-fill: @other_text;
-  text-size: 11;
+  text-size: 12;
   text-halo-fill: @other_halo;
   text-halo-radius: 1.0;
   text-halo-rasterizer: fast;
