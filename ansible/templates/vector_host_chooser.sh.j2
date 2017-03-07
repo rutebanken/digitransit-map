@@ -3,22 +3,22 @@
 set -e
 
 : ${VECTOR_MAP_SERVER=""}
-: ${VECTOR_MAP_PORT="{{vector_map_server_exposed_port}}"}
+: ${VECTOR_MAP_SERVICE_PORT="{{vector_map_server_exposed_port}}"}
 
 if [ "x$VECTOR_MAP_SERVER" != "x" ]
 then
-  echo "Overriding vector map server host with $VECTOR_MAP_SERVER:$VECTOR_MAP_PORT"
+  echo "Overriding vector map server host with $VECTOR_MAP_SERVER:$VECTOR_MAP_SERVICE_PORT"
   # Resetting style
   cd {{map_server_root}}/{{map_server_style}}/
   git checkout -- project.yml
-  sed -i -e 's#source: "http://tiletest.kapsi.fi:8080/index.json"#source: "tilejson+http://'"${VECTOR_MAP_SERVER}"':'"${VECTOR_MAP_PORT}"'/hsl-vector-map/index.json"#' project.yml
+  sed -i -e 's#source: "http://tiletest.kapsi.fi:8080/index.json"#source: "tilejson+http://'"${VECTOR_MAP_SERVER}"':'"${VECTOR_MAP_SERVICE_PORT}"'/hsl-vector-map/index.json"#' project.yml
   # Go back default workdir
   cd {{map_server_root}}
 
 else
 
   echo "Not overriding vector map server dns entry. If this is desired, set "
-  echo "variable VECTOR_MAP_SERVER. The vector map server target port is $VECTOR_MAP_PORT"
+  echo "variable VECTOR_MAP_SERVER. The vector map server target port is $VECTOR_MAP_SERVICE_PORT"
 fi
 
 exec "$@"
