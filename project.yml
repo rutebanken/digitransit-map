@@ -18,7 +18,7 @@ description: ''
 format: "png8:m=h:c=64"
 interactivity_layer: ''
 layers: null
-maxzoom: 19
+maxzoom: 20
 minzoom: 0
 name: Streets
 source: "http://tiletest.kapsi.fi:8080/index.json"
