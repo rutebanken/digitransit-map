@@ -1,0 +1,17 @@
+---
+docker_build_root: /usr/src
+#build_home: "{{docker_build_root}}/jenkinsbuild/workspace/mapserver"
+build_home: "/usr/src/mapserver"
+build_log_directory: "{{docker_build_root}}/log"
+logfile: "{{build_log_directory}}/mapserver.log"
+map_server_root: "{{docker_build_root}}/map-server"
+mapserver_docker_image: "eu.gcr.io/carbon-1287/map-server"
+mapserver_node_memory_limit: "256"
+mapserver_memory_limit:       "{{mapserver_node_memory_limit}}MB"
+map_server_exposed_port: 8090
+map_server_style_git: https://github.com/rutebanken/digitransit-map.git
+map_server_branch: rutebanken_develop
+map_server_style: digitransit-map.tm2
+vector_map_server_exposed_port: 8089
+vector_map_server_style_git: https://github.com/HSLdevcom/osm-bright.tm2source.git
+vector_map_server_style: osm-bright.tm2source
