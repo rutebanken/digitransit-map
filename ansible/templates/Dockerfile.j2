@@ -35,6 +35,9 @@ RUN   npm install mapnik@3.5.14 && \
 # Trouble 04.10.2016
 # npm install tilelive-raster@0.3.0 && \
 
+# Forcing reset of source:
+RUN echo "{{ansible_date_time.epoch}}" /build_time.txt
+
 RUN git clone {{map_server_style_git}} {{map_server_style}}
 WORKDIR {{map_server_style}}
 RUN git checkout {{map_server_branch}}
