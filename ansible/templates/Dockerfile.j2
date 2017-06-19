@@ -1,4 +1,4 @@
-FROM node:6.9.2
+FROM node:6.7.0
 MAINTAINER Rutebanken
 
 RUN wget --quiet https://github.com/Yelp/dumb-init/releases/download/v1.0.1/dumb-init_1.0.1_amd64.deb
@@ -15,21 +15,21 @@ WORKDIR {{map_server_root}}
 
 RUN npm install -g node-gyp
 RUN   npm install mapnik@3.5.14 && \
-      npm install tessera@0.11.2 && \
-      npm install tilelive-tmsource@0.6.1 && \
-      npm install tilelive-vector@3.9.4 && \
-      npm install tilelive-xray@0.3.0 && \
-      npm install tilejson@1.0.3 && \
-      npm install tilelive-merge@1.1.2 && \
-      npm install tilelive-streaming@0.7.7 && \
-      npm install tilelive-modules@0.3.4 && \
-      npm install tilelive-http@0.12.2 && \
+      npm install tessera@0.10.1 && \
+      npm install tilelive-tmsource@0.5.0 && \
+      npm install tilelive-vector@3.9.3 && \
+      npm install tilelive-xray@0.2.0 && \
+      npm install tilejson@1.0.1 && \
+      npm install tilelive-merge@1.0.3 && \
+      npm install tilelive-streaming@0.7.4 && \
+      npm install tilelive-modules@0.3.1 && \
+      npm install tilelive-http@0.10.0 && \
       npm install tilelive-error@1.0.0 && \
       npm install tilelive-mapnik@0.6.18 && \
       npm install tilelive-solid@0.1.2 && \
-      npm install tilelive-mapbox@0.5.0 && \
+      npm install tilelive-mapbox@0.4.0 && \
       npm install tilelive-utfgrid@0.2.0 && \
-      npm install tilelive-tmstyle@0.7.0
+      npm install tilelive-tmstyle@0.6.0
 
 # Trouble 04.10.2016
 # npm install tilelive-raster@0.3.0 && \
