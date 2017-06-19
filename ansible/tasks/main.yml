@@ -19,5 +19,9 @@
   register: image
 
 - name: Push mapserver docker image if built
+  tags: push
   when: image.changed
   shell: docker push {{ mapserver_docker_image|quote }}
+
+# You can build this image with:
+#   ansible-playbook --skip-tags=push -c local ansible/mapserver_docker_image.yml
