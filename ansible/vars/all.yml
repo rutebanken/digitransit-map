@@ -1,7 +1,5 @@
 ---
 docker_build_root: /usr/src
-#build_home: "{{docker_build_root}}/jenkinsbuild/workspace/mapserver"
-build_home: "/usr/src/mapserver"
 build_log_directory: "{{docker_build_root}}/log"
 logfile: "{{build_log_directory}}/mapserver.log"
 map_server_root: "{{docker_build_root}}/map-server"
