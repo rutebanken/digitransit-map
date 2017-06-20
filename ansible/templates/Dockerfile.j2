@@ -15,26 +15,25 @@ WORKDIR {{map_server_root}}
 
 RUN echo '{}' > package.json && \
     npm install -g node-gyp
-RUN   npm install mapnik@3.6.1 && \
-      npm install tessera@0.11.2 && \
-      npm install tilelive-tmsource@0.6.1
-      #  && \
-RUN npm install @mapbox/tilelive-vector@3.10.1 && \
-      npm install tilelive-xray@0.3.0 && \
-      npm install @mapbox/tilejson@1.0.4 && \
-      npm install tilelive-merge@1.1.2 && \
-      npm install tilelive-streaming@0.7.7 && \
-      npm install tilelive-modules@0.3.4 && \
-      npm install tilelive-http@0.12.2 && \
-      npm install tilelive-error@1.0.0 && \
-      npm install tilelive-mapnik@0.6.18 && \
-      npm install tilelive-solid@0.1.2 && \
-      npm install tilelive-mapbox@0.5.0 && \
-      npm install tilelive-utfgrid@0.2.0 && \
-      npm install tilelive-tmstyle@0.7.0
+RUN   npm install --save mapnik@3.6.1 && \
+      npm install --save tessera@0.11.2 && \
+      npm install --save minimist@1.2.0 && \
+      npm install --save tilelive-tmsource@0.6.1 && \
+      npm install --save @mapbox/tilelive-vector@3.10.1 && \
+      npm install --save tilelive-xray@0.3.0 && \
+      npm install --save @mapbox/tilejson@1.0.4 && \
+      npm install --save tilelive-merge@1.1.2 && \
+      npm install --save tilelive-streaming@0.7.7 && \
+      npm install --save tilelive-modules@0.3.4 && \
+      npm install --save tilelive-http@0.12.2 && \
+      npm install --save tilelive-error@1.0.0 && \
+      npm install --save tilelive-mapnik@0.6.18 && \
+      npm install --save tilelive-solid@0.1.2 && \
+      npm install --save tilelive-mapbox@0.5.0 && \
+      npm install --save tilelive-utfgrid@0.2.0 && \
+      npm install --save tilelive-tmstyle@0.7.0
 
-# Trouble 04.10.2016
-# npm install tilelive-raster@0.3.0 && \
+RUN npm install
 
 # Forcing reset of source:
 RUN echo "{{ansible_date_time.epoch}}" /build_time.txt
