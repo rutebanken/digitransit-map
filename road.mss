@@ -586,7 +586,7 @@
     [zoom=17] { f/line-width: @rdz17_med; }
     [zoom>17] { f/line-width: @rdz18_med; }
   }
-  ['mapnik::geometry_type'=3] {
+  ['mapnik::geometry_type'=4] {
     f/polygon-fill: @main_fill;
   }
 }
