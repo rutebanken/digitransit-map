@@ -33,6 +33,8 @@ RUN   npm install --save mapnik@3.6.1 && \
       npm install --save tilelive-utfgrid@0.2.0 && \
       npm install --save tilelive-tmstyle@0.7.0 && \
       npm install --save readable-stream
+# Separate line in order to hope to use hash cache
+RUN npm install --save abbrev
 RUN npm install
 
 # Forcing reset of source:
