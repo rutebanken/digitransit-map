@@ -34,7 +34,11 @@ RUN   npm install --save mapnik@3.6.1 && \
       npm install --save tilelive-tmstyle@0.7.0 && \
       npm install --save readable-stream
 # Separate line in order to hope to use hash cache
-RUN npm install --save abbrev
+# TODO Remove duplicate readable-stream above
+RUN npm install --save readable-stream@2.3.3 && \
+ npm install --save abbrev@1.1.0 && \
+ npm install --save abbrev osenv@0.1.4
+
 RUN npm install
 
 # Forcing reset of source:
