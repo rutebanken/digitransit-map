@@ -20,7 +20,7 @@ RUN   npm install --save mapnik@3.6.1 && \
       npm install --save minimist@1.2.0 && \
       npm install --save tilelive-tmsource@0.6.1 && \
       npm install --save @mapbox/tilelive-vector@3.10.1 && \
-      npm install --save tilelive-xray@0.3.0 && \
+      #npm install --save tilelive-xray@0.3.0 && \
       npm install --save @mapbox/tilejson@1.0.4 && \
       npm install --save tilelive-merge@1.1.2 && \
       npm install --save tilelive-streaming@0.7.7 && \
@@ -31,8 +31,8 @@ RUN   npm install --save mapnik@3.6.1 && \
       npm install --save tilelive-solid@0.1.2 && \
       npm install --save tilelive-mapbox@0.5.0 && \
       npm install --save tilelive-utfgrid@0.2.0 && \
-      npm install --save tilelive-tmstyle@0.7.0
-
+      npm install --save tilelive-tmstyle@0.7.0 && \
+      npm install --save readable-stream
 RUN npm install
 
 # Forcing reset of source:
