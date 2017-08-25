@@ -11,7 +11,7 @@ then
   # Resetting style
   cd {{map_server_root}}/{{map_server_style}}/
   git checkout -- project.yml
-  sed -i -e 's#source: "http://tiletest.kapsi.fi:8080/index.json"#source: "tilejson+http://'"${VECTOR_MAP_SERVER}"':'"${VECTOR_MAP_SERVICE_PORT}"'/hsl-vector-map/index.json"#' project.yml
+  sed -i -e 's#source: "http://tiletest.kapsi.fi:8080/index.json"#source: "tilejson+http://'"${VECTOR_MAP_SERVER}"':'"${VECTOR_MAP_SERVICE_PORT}"'/hsl-vector-map/index.json?timeout=0"#' project.yml
   # Go back default workdir
   cd {{map_server_root}}
 
