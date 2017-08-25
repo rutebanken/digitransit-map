@@ -48,7 +48,7 @@ RUN git clone {{map_server_style_git}} {{map_server_style}}
 WORKDIR {{map_server_style}}
 RUN git checkout {{map_server_branch}}
 
-RUN sed -i -e 's#source: "http://tiletest.kapsi.fi:8080/index.json"#source: "tilejson+http://vectormapserver:{{vector_map_server_exposed_port}}/hsl-vector-map/index.json"#' project.yml
+RUN sed -i -e 's#http://tiletest.kapsi.fi:8080/index.json#tilejson+http://vectormapserver:{{vector_map_server_exposed_port}}/hsl-vector-map/index.json#' project.yml
 
 COPY config.json {{map_server_root}}/
 
