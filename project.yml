@@ -21,7 +21,7 @@ layers: null
 maxzoom: 20
 minzoom: 0
 name: Streets
-source: "http://tiletest.kapsi.fi:8080/index.json?timeout=0"
+source: "http://tiletest.kapsi.fi:8080/index.json?timeout=240000"
 styles:
   - vars.mss
   - bg.mss
